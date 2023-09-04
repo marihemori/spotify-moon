@@ -1,0 +1,119 @@
+:host {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+
+    .base {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+
+        img {
+            width: 40%;
+        }
+
+        button {
+            min-width: 200px;
+            padding: 10px;
+            border-radius: 500px;
+            background-color: white;
+            color: black;
+            border: 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 1s;
+            &:hover {
+                background: radial-gradient(ellipse #1b2735 0%, #ffffff 80%);
+                box-shadow: 0 0 0 0.6em rgba(255, 255, 255, 0.05),
+                0 0 0 1.2em rgba(255, 255, 255, 0.05), 0 0 0 1.8em rgba(255, 255, 255, 0.05);
+
+            }
+        }
+        .spotify-logo {
+            width: 10rem;
+            margin-bottom: 10rem;
+        }
+    }
+
+    .mood {
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 20px;
+        text-transform: uppercase;
+        margin-top: 4rem;
+    }
+}
+
+.container {
+    width: 31.25em;
+    color: #ffffff;
+    position: relative;
+    p.letter {
+        font-size: 3.5em;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
+    }
+    .letter-M {
+        left: 0.2em;
+    }
+
+    .letter-N {
+        right: 0.2em;
+    }
+    .moon {
+        background-color: #f5f5f5;
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        box-shadow: 0 0 0 0.6em rgba(255, 255, 255, 0.05),
+        0 0 0 1.2em rgba(255, 255, 255, 0.05), 0 0 0 1.8em rgba(255, 255, 255, 0.05);
+        &::after {
+            position: absolute;
+            content: "";
+            background-color: #e6e6e6;
+            height: 0.9em;
+            width: 0.9em;
+            border-radius: 50%;
+            top: 3.75em;
+            left: 1.25em;
+            box-shadow: 0.9em -2.1em 0 0.2em #e6e6e6, 1.5em -0.3em 0 -0.06em #e6e6e6;
+        }
+        .orbit {
+            height: 14em;
+            width: 14em;
+            border-radius: 50%;
+            border: 1px solid white;
+            position: absolute;
+            margin: auto;
+            left: -4.5em;
+            bottom: -4.5em;
+            animation: spin 8s infinite linear;
+            background: none;
+            @keyframes spin {
+                100% {
+                  transform: rotate(360deg);
+                }
+            }
+            p {
+                font-size: 1.5rem;
+            }
+          }
+    }
+    @media screen and (min-width: 700px) {
+        font-size: 20px;
+    }
+}

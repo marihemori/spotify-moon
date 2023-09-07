@@ -1,0 +1,35 @@
+button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 500px;
+    background-color: #f5f5f5;
+    color: black;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 1s;
+    text-align: left;
+    &:hover {
+      background: radial-gradient(ellipse #1b2735 0%, #ffffff 80%);
+      box-shadow: 0 0 0 0.6em rgba(255, 255, 255, 0.05);
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        width: 150px;
+        white-space: nowrap;
+        margin-left: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    color: white;
+    background-color: transparent;
+
+    &.selected {
+        background-color: white;
+        color: black;
+    }
+}

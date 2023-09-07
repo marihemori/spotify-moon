@@ -1,0 +1,30 @@
+<div class="menu flex">
+    <div class="image-container flex flex-center">
+        <img src="assets/images/spotify-logo-inicio.png" alt="">
+        <div class="moon-container">
+            <div class="moon">
+                <div class="orbit">
+                    <p>o</p>
+                </div>
+            </div>
+        </div>
+        <p>How is your mood today?</p>
+        <hr>
+    </div>
+    <div class="menu-container flex options">
+        <app-button-menu [description]="'Home'" [selected]="true">
+            <fa-icon [icon]="homeIcon"></fa-icon>
+        </app-button-menu>
+
+        <app-button-menu [description]="'Search'">
+            <fa-icon [icon]="searchIcon"></fa-icon>
+        </app-button-menu>
+
+        <app-button-menu [description]="'Artists'">
+            <fa-icon [icon]="artistsIcon"></fa-icon>
+        </app-button-menu>
+    </div>
+</div>
+<div class="user-info">
+
+</div>

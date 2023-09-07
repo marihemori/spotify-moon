@@ -1,30 +1,53 @@
 <div class="menu flex">
-    <div class="image-container flex flex-center">
-        <img src="assets/images/spotify-logo-inicio.png" alt="">
-        <div class="moon-container">
-            <div class="moon">
-                <div class="orbit">
-                    <p>o</p>
-                </div>
-            </div>
+  <div class="image-container flex flex-center">
+    <img src="assets/images/spotify-logo-inicio.png" alt="" />
+    <div class="moon-container">
+      <div class="moon">
+        <div class="orbit">
+          <p>o</p>
         </div>
-        <p>How is your mood today?</p>
-        <hr>
+        <img [src]="user.imageUrl" alt="">
+      </div>
     </div>
-    <div class="menu-container flex options">
-        <app-button-menu [description]="'Home'" [selected]="true">
-            <fa-icon [icon]="homeIcon"></fa-icon>
-        </app-button-menu>
+    <p>{{ user.name }}, how is your mood today?</p>
+    <hr />
+  </div>
+  <div class="menu-container flex options">
+    <app-button-menu
+      [description]="'Home'"
+      [selected]="selectedMenuItem === 'Home'"
+      (click)="buttonClick('Home')"
+    >
+      <fa-icon [icon]="homeIcon"></fa-icon>
+    </app-button-menu>
 
-        <app-button-menu [description]="'Search'">
-            <fa-icon [icon]="searchIcon"></fa-icon>
-        </app-button-menu>
+    <app-button-menu
+      [description]="'Search'"
+      [selected]="selectedMenuItem === 'Search'"
+      (click)="buttonClick('Search')"
+    >
+      <fa-icon [icon]="searchIcon"></fa-icon>
+    </app-button-menu>
 
-        <app-button-menu [description]="'Artists'">
-            <fa-icon [icon]="artistsIcon"></fa-icon>
-        </app-button-menu>
+    <app-button-menu
+      [description]="'Artists'"
+      [selected]="selectedMenuItem === 'Artists'"
+      (click)="buttonClick('Artists')"
+    >
+      <fa-icon [icon]="artistsIcon"></fa-icon>
+    </app-button-menu>
+  </div>
+  <div class="menu-container flex">
+    <p>Playlists</p>
+    <div class="playlist-scroll">
+      <app-button-menu
+        *ngFor="let playlist of playlists"
+        [description]="playlist.name"
+        [selected]="selectedMenuItem === playlist.id"
+        (click)="buttonClick(playlist.id)"
+      >
+        <fa-icon [icon]="playlistIcon"> </fa-icon>
+      </app-button-menu>
     </div>
-</div>
-<div class="user-info">
-
+  </div>
 </div>

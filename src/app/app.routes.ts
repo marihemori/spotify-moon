@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { userLoggedResolver } from './resolvers/user-logged-resolver';
 
 export const AppRoutes: Routes = [
   {
@@ -15,5 +16,8 @@ export const AppRoutes: Routes = [
     path: 'player',
     loadChildren: () =>
       import('./pages/player/player.module').then((x) => x.PlayerModule),
+    resolve: {
+      userLogged: userLoggedResolver,
+    },
   },
 ];

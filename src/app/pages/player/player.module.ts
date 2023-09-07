@@ -6,9 +6,15 @@ import { RouterModule } from '@angular/router';
 import { LeftNavComponent } from 'src/app/components/left-nav/left-nav.component';
 import { ButtonMenuComponent } from 'src/app/components/button-menu/button-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserAvatarComponent } from 'src/app/components/user-avatar/user-avatar.component';
 
 @NgModule({
-  declarations: [PlayerComponent, LeftNavComponent, ButtonMenuComponent],
+  declarations: [
+    PlayerComponent,
+    LeftNavComponent,
+    ButtonMenuComponent,
+    UserAvatarComponent,
+  ],
   imports: [
     CommonModule,
     FontAwesomeModule,

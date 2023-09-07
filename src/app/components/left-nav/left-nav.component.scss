@@ -1,6 +1,10 @@
 @import 'variables';
 
 $h-spotify-logo: 120px;
+$h-footer-user: 70px;
+$h-moon: 5rem;
+
+$h-space: calc($h-spotify-logo + $h-menu-options + $h-footer-user);
 
 :host {
     max-width: 300px;
@@ -8,8 +12,6 @@ $h-spotify-logo: 120px;
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
-
-
     .menu {
         flex-grow: 1;
         flex-direction: column;
@@ -19,6 +21,8 @@ $h-spotify-logo: 120px;
         background: rgba(255, 255, 255, 0.027);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
+        z-index: 10;
+        overflow: hidden;
         .image-container {
             min-height: $h-spotify-logo;
             display: flex;
@@ -41,6 +45,7 @@ $h-spotify-logo: 120px;
             .moon-container {
                 color: #ffffff;
                 margin-top: 5rem;
+                height: $h-moon;
                 .moon {
                   background-color: #f5f5f5;
                   height: 4em;
@@ -60,7 +65,7 @@ $h-spotify-logo: 120px;
                     margin: auto;
                     left: 5rem;
                     top: 8rem;
-                    animation: spin 8s infinite linear;
+                    animation: spin 5s infinite linear;
                     background: none;
                     position: absolute;
                     @keyframes spin {
@@ -81,12 +86,42 @@ $h-spotify-logo: 120px;
         .menu-container {
             width: 100%;
             flex-direction: column;
+            &.flex {
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+            }
             &.options {
                 margin-top: 1rem;
                 min-height: $h-menu-options;
                 gap: 1rem;
             }
-        }
+            p {
+              text-transform: uppercase;
+              font-weight: 600;
+              font-size: 0.8rem;
+              align-self: flex-start;
+              opacity: 0.7;
+            }
 
+            .playlist-scroll {
+              width: 100%;
+              max-height: 15rem;
+              overflow-y: auto;
+
+              &::-webkit-scrollbar {
+                display: none;
+              }
+            }
+        }
+    }
+
+    .user-info {
+      flex-grow: 0;
+      display: block;
+      bottom: 0;
+      height: $h-footer-user;
+      width: 100%;
+      background-color: red;
     }
 }

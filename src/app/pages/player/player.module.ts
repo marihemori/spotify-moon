@@ -7,6 +7,10 @@ import { LeftNavComponent } from 'src/app/components/left-nav/left-nav.component
 import { ButtonMenuComponent } from 'src/app/components/button-menu/button-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserAvatarComponent } from 'src/app/components/user-avatar/user-avatar.component';
+import { NavFooterComponent } from 'src/app/components/nav-footer/nav-footer.component';
+import { HomeComponent } from '../home/home.component';
+import { TopArtistsComponent } from 'src/app/components/top-artists/top-artists.component';
+import { RightNavComponent } from 'src/app/components/right-nav/right-nav.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +18,10 @@ import { UserAvatarComponent } from 'src/app/components/user-avatar/user-avatar.
     LeftNavComponent,
     ButtonMenuComponent,
     UserAvatarComponent,
+    NavFooterComponent,
+    HomeComponent,
+    TopArtistsComponent,
+    RightNavComponent,
   ],
   imports: [
     CommonModule,

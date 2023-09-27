@@ -7,8 +7,6 @@ import { AppRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,7 +15,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     FontAwesomeModule,
     RouterModule.forRoot(AppRoutes),
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

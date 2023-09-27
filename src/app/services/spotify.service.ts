@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SpotifyConfiguration } from 'src/environments/environment.development';
+import { SpotifyConfiguration } from 'src/environments/environment';
 import Spotify from 'spotify-web-api-js';
 import { IUser } from '../Interfaces/IUser';
 import {

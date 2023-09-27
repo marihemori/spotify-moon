@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1 and the and the [Spotify API](https://developer.spotify.com/documentation/web-api). Made entirely for study purposes :)
 
-<div style="text-align: center;">
+<div align="center">
 <img src="./src/assets/images/moon3.png" style="width:550px;">
 <img src="./src/assets/images/moon1.png" style="width:550px;">
 <img src="./src/assets/images/moon2.png" style="width:550px;">

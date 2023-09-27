@@ -1,15 +1,8 @@
-<div class="my-musics">
-    <span class="title-bg mt-4">
-        Your favorite artist
-    </span>
-
-    <app-top-artists class="mt-5 d-block">
-
-    </app-top-artists>
-
-    <span class="title-bg mt-4">
-        Liked songs
-    </span>
+<div class="list">
+    <app-banner [ImageUrl]="bannerImageUrl" [Text]="bannerText"></app-banner>
+    <div class="title mt-7">
+        {{ title }}
+    </div>
 
     <table class="table mt-3">
         <thead>

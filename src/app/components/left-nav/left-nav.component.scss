@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 $h-spotify-logo: 120px;
 $h-footer-user: 70px;
@@ -7,140 +7,141 @@ $h-moon: 5rem;
 $h-space: calc($h-spotify-logo + $h-menu-options + $h-footer-user);
 
 :host {
-    max-width: 300px;
-    min-height: 100vh;
-    overflow-y: hidden;
-    display: flex;
+  max-width: 300px;
+  min-height: 100vh;
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  .menu {
+    flex-grow: 1;
     flex-direction: column;
-    .menu {
-        flex-grow: 1;
-        flex-direction: column;
-        height: 100%;
-        padding: 2rem;
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
-        background: rgba(255, 255, 255, 0.027);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        z-index: 10;
-        overflow: hidden;
-        .image-container {
-            min-height: $h-spotify-logo;
-            display: flex;
-            flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.027);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 10;
+    overflow: hidden;
+    .image-container {
+      min-height: $h-spotify-logo;
+      display: flex;
+      flex-direction: column;
 
-            img {
-                width: 70%;
-            }
+      img {
+        width: 70%;
+      }
 
-            p {
-                text-transform: uppercase;
-                font-weight: 600;
-                font-size: 0.8rem;
-                margin-top: 4rem;
+      p {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin-top: 4rem;
+      }
+      hr {
+        width: 100%;
+        border-color: rgba(255, 255, 255, 0.05);
+      }
+      .moon-container {
+        color: #ffffff;
+        margin-top: 5rem;
+        height: $h-moon;
+        .moon {
+          background-color: #f5f5f5;
+          height: 4em;
+          width: 4em;
+          border-radius: 50%;
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          cursor: pointer;
+          animation: replay 3s alternate-reverse infinite;
+          @keyframes replay {
+            from {
+              box-shadow: 0 0 0 0.1em rgba(255, 255, 255, 0.05);
             }
-            hr {
-                width: 100%;
-                border-color: rgba(255, 255, 255, 0.05);
+            to {
+              box-shadow: 0 0 0 0.2em #f5f5f5, 0 0 0 0.2em #f5f5f5,
+                0 0 0 0.8em #f5f5f5;
             }
-            .moon-container {
-                color: #ffffff;
-                margin-top: 5rem;
-                height: $h-moon;
-                .moon {
-                  background-color: #f5f5f5;
-                  height: 4em;
-                  width: 4em;
-                  border-radius: 50%;
-                  margin: auto;
-                  left: 0;
-                  right: 0;
-                  top: 0;
-                  bottom: 0;
-                  cursor: pointer;
-                  animation: replay 3s alternate-reverse infinite;
-                  @keyframes replay {
-                    from {
-                      box-shadow: 0 0 0 0.1em rgba(255, 255, 255, 0.05);
-                    }
-                    to {
-                      box-shadow: 0 0 0 0.2em #f5f5f5, 0 0 0 0.2em #f5f5f5,
-                        0 0 0 0.8em #f5f5f5;
-                    }
-                  }
-                  .orbit {
-                    height: 9rem;
-                    width: 9rem;
-                    border-radius: 50%;
-                    border: 1px solid rgba(255, 255, 255, 0.05);
-                    margin: auto;
-                    left: 5rem;
-                    top: 8rem;
-                    animation: spin 5s infinite linear;
-                    background: none;
-                    position: absolute;
-                    @keyframes spin {
-                      100% {
-                        transform: rotate(360deg);
-                      }
-                    }
-                    p {
-                      font-size: 1rem;
-                    }
-                  }
-                  img {
-                    flex-grow: 0;
-                    width: 4rem;
-                    right: 7.3rem;
-                    height: 4rem;
-                    top: 10.6rem;
-                    position: absolute;
-                    border-radius: 50%;
-                  }
-                }
-                @media screen and (min-width: 700px) {
-                  font-size: 20px;
-                }
-            }
-        }
-        .menu-container {
-            width: 100%;
-            flex-direction: column;
-            &.flex {
-              flex-direction: column;
-              justify-content: flex-start;
-            }
-            &.options {
-                margin-top: 1rem;
-                min-height: $h-menu-options;
-                gap: 1rem;
-            }
-            p {
-              text-transform: uppercase;
-              font-weight: 600;
-              font-size: 0.8rem;
-              align-self: flex-start;
-              opacity: 0.7;
-            }
-
-            .playlist-scroll {
-              width: 100%;
-              // max-height: 30vh;
-              max-height: calc(66vh - $h-space);
-              overflow-y: auto;
-
-              &::-webkit-scrollbar {
-                display: none;
+          }
+          .orbit {
+            height: 9rem;
+            width: 9rem;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: auto;
+            left: 5rem;
+            top: 8rem;
+            animation: spin 5s infinite linear;
+            background: none;
+            position: absolute;
+            @keyframes spin {
+              100% {
+                transform: rotate(360deg);
               }
             }
+            p {
+              font-size: 1rem;
+            }
+          }
+          img {
+            flex-grow: 0;
+            width: 4rem;
+            right: 7.3rem;
+            height: 4rem;
+            top: 10.6rem;
+            position: absolute;
+            border-radius: 50%;
+          }
         }
+        @media screen and (min-width: 700px) {
+          font-size: 20px;
+        }
+      }
     }
-
-    .user-info {
-      flex-grow: 0;
-      display: block;
-      bottom: 0;
-      height: $h-footer-user;
+    .menu-container {
       width: 100%;
-      align-self: flex-end;
+      flex-direction: column;
+      &.flex {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      &.options {
+        margin-top: 1rem;
+        min-height: $h-menu-options;
+        gap: 1rem;
+      }
+      p {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 0.8rem;
+        align-self: flex-start;
+        opacity: 0.7;
+      }
+
+      .playlist-scroll {
+        width: 100%;
+        // max-height: 30vh;
+        max-height: calc(67vh - $h-space);
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
     }
+  }
+
+  .user-info {
+    flex-grow: 0;
+    display: block;
+    bottom: 0;
+    height: $h-footer-user;
+    width: 100%;
+    align-self: flex-end;
+  }
 }

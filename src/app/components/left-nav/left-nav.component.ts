@@ -32,7 +32,6 @@ export class LeftNavComponent implements OnInit {
   ngOnInit(): void {
     this.searchPlaylists();
     this.user = this.spotifyService.user;
-    console.log(`${this.user} done?`);
   }
 
   buttonClick(button: string) {
@@ -42,6 +41,10 @@ export class LeftNavComponent implements OnInit {
 
   async searchPlaylists() {
     this.playlists = await this.spotifyService.searchUserPlaylist();
-    console.log(this.playlists);
+  }
+
+  goToPlaylistPage(playlistId: string) {
+    this.selectedMenuItem = playlistId;
+    this.router.navigateByUrl(`player/list/playlist/${playlistId}`);
   }
 }

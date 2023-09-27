@@ -32,7 +32,6 @@ export class PlayerComponent implements OnInit {
       this.notAuthenticated();
       this.showPageContent = false;
     }
-    console.log(this.showPageContent);
   }
 
   notAuthenticated() {
@@ -40,7 +39,4 @@ export class PlayerComponent implements OnInit {
     this.showPageContent = false;
     this.router.navigate(['/login']);
   }
-}
-function ngOnInit() {
-  throw new Error('Function not implemented.');
 }

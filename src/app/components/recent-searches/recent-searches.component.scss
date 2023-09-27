@@ -1,0 +1,38 @@
+:host {
+    input {
+        width: 100%;
+        padding: 10px 5px;
+        border-radius: 8px;
+        border-color: white;
+        color: white;
+        outline: none;
+        background: transparent;
+
+        &::placeholder {
+            font-size: .9rem;
+        }
+
+        &:focus, &:active {
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.185);
+            border-width: 2px;
+        }
+    }
+
+    .sugestions {
+        flex-wrap: wrap;
+
+        span {
+            background-color: #fff;
+            margin-right: 5px;
+            padding: 5px 10px;
+            color: #000000;
+            margin-top: 10px;
+            font-size: .9rem;
+            border-radius: 20px;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.418);
+            }
+        }
+    }
+}
